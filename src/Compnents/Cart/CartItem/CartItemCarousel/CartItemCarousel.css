@@ -1,0 +1,41 @@
+.cart-item-carousel{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.cart-item-carousel > img{
+    height: 21rem;
+    width: 12.5rem;
+    object-fit: contain;
+}
+.carousel-controls{
+    position: absolute;
+    bottom: 2rem;
+    right: 1.5rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    cursor: pointer;
+}
+.cart-item-carousel-left, .cart-item-carousel-right{
+    background: rgba(0, 0, 0, 0.73);
+    opacity: 0.8;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item-carousel-left:hover, .cart-item-carousel-right:hover{
+    background: rgba(0, 0, 0, 1);
+}

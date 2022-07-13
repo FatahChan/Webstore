@@ -1,0 +1,46 @@
+
+.cart-attribute{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.cart-text-attribute{
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    cursor: pointer;
+    width: 3rem;
+    height: 2rem;
+    font-weight: 400;
+    font-family: 'Source Code Pro', sans-serif;
+}
+
+.cart-text-attribute-selected{
+    background-color: black;
+    color: white;
+}
+
+
+
+.cart-swatch-attribute{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 1px;
+    cursor: pointer;
+    gap: 1rem;
+    border: 1px solid black;
+}
+
+.cart-swatch-attribute-selected{
+    border: 3px solid #5ECE7B;
+}
+
+.cart-swatch-attribute-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

@@ -1,0 +1,50 @@
+.attributes{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.attribute{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.text-attribute{
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    cursor: pointer;
+    width: 3.9375rem;
+    height: 2.8125rem;
+    font-weight: 400;
+    font-family: 'Source Code Pro', sans-serif;
+}
+
+.text-attribute-selected{
+    background-color: black;
+    color: white;
+}
+
+
+
+.swatch-attribute{
+    width: 2rem;
+    height: 2rem;
+    margin: 1px;
+    cursor: pointer;
+    gap: 1rem;
+    border: 1px solid black;
+}
+
+.swatch-attribute-selected{
+    border: 3px solid #5ECE7B;
+}
+
+.swatch-attribute-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

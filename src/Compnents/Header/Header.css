@@ -1,0 +1,74 @@
+.header{
+    margin: 0 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header > *{
+    height: 5rem;
+    width: 14rem;
+}
+
+.left-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 0;
+}
+.middle-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.category-selector-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    height: 5rem;
+    color: black;
+}
+
+.category-selector-header:hover{
+    border-bottom: 2px solid #5ECE7B;
+    color: #5ECE7B;
+}
+
+
+
+#currency-dropdown-button{
+    background-color: white;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.show {display: block !important}
+#currency-dropdown{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 6rem;
+    overflow: auto;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+

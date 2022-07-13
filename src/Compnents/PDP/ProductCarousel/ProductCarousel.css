@@ -1,0 +1,36 @@
+.carousel{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.carousel-column{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carousel-column > img{
+    width: 5rem;
+    height: 5rem;
+    padding: 2px;
+    object-fit: contain;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.selected-img{
+    opacity: 1 !important;
+}
+
+
+.carousel-display{
+    position: relative;
+}
+
+.carousel-display > img{
+    height: 35rem;
+    width: 35rem;
+    object-fit: contain;
+    margin: 0 5rem;
+}

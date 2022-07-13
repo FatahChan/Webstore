@@ -1,0 +1,17 @@
+.cart-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+
+    padding: 1rem 0;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;;
+
+}
+
+.cart-counter-carousel{
+    display: flex;
+    gap: 2rem;
+}

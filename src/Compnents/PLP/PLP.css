@@ -1,0 +1,21 @@
+.product-list{
+    margin: 5rem 5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product-list-category-name{
+    margin: 5rem 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 160%;
+}
