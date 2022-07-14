@@ -3,3 +3,11 @@ YARN VERSION
 
 Applicant name: Ahmad Fathallah
 
+
+# Getting started
+
+clone backend from [here](https://github.com/scandiweb/junior-react-endpoint)
+
+
+1 - yarn install
+2- yarn start
