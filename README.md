@@ -9,5 +9,5 @@ Applicant name: Ahmad Fathallah
 clone backend from [here](https://github.com/scandiweb/junior-react-endpoint)
 
 
-1 - yarn install
+1 - yarn install\n
 2- yarn start
