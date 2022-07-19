@@ -18,6 +18,7 @@ class CartItemComponent extends PureComponent {
           if(cart[j]['product'].id ===  cart[i]['product'].id && JSON.stringify(cart[j]['attributes']) === JSON.stringify(cart[i]['attributes'])){
             cart[i]['quantity'] += cart[j]['quantity']
             cart.splice(j, 1);
+            break;
           }
         }
         this.props.setCart(cart);
@@ -37,8 +38,8 @@ class CartItemComponent extends PureComponent {
         }else {
           cart[i]['quantity'] = quantity;
           this.props.setCart(cart);
+          break;
         }
-        return;
       }
     }
   }
