@@ -3,9 +3,10 @@ import {getCategories} from "../../BackendCalls/getCategories";
 import {getCurrencies} from "../../BackendCalls/getCurrencies";
 import {logo} from "../../Assets/logo";
 import './Header.css'
-import {Link} from "react-router-dom";
-import CurrencyDropdownComponent from "./CurrencyDorpdown/CurrencyDropdown.Component";
+import {Link, withRouter} from "react-router-dom";
 import CartModalComponent from "./CartModal/CartModal.Component";
+import CurrencyDropdownComponent from "./CurrencyDorpdown/CurrencyDropdownComponent";
+
 class HeaderComponent extends PureComponent {
 
   constructor(props) {
@@ -15,13 +16,16 @@ class HeaderComponent extends PureComponent {
       currencies: [],
       showCurrencyDropdown: false,
       isLoading: true,
-      selectedCategory: ""
+      selectedCategory: "",
+      selectedCurrency: ""
     }
   }
   componentDidMount() {
     this.setupHeader().then(() => {
-      this.setState({isLoading: false})
+      const selectedCurrency= this.props.getSelectedCurrency()
+      this.setState({selectedCurrency: selectedCurrency, isLoading: false})
     })
+
   }
 
 
@@ -32,18 +36,19 @@ class HeaderComponent extends PureComponent {
     await getCurrencies().then((res) => {
       this.setState({currencies: res})
     })
+    this.setState({selectedCategory: this.props.location.pathname.split('/')[1]})
   }
+
 
 
   render() {
     if(this.state['isLoading']) { return <div>Loading...</div> }
-
     return (
         <div className="header">
           <div className="left-header">
           {this.state['categories'].map((category) => (
-              <Link key={category} style={{textDecoration: 'none'}} to={`/${category}`}>
-                <div key={category} className={`category-selector-header ${this.state['selectedCategory']===category? 'category-selected': ''}`}>
+              <Link key={category} to={`/${category}`}>
+                <div key={category} onClick={() => {this.setState({selectedCategory: category})}} className={`category-selector-header ${this.state['selectedCategory']===category? 'category-selected': ''}`}>
                   {category}
                 </div>
               </Link>
@@ -53,10 +58,12 @@ class HeaderComponent extends PureComponent {
             <div className="logo">{logo}</div>
           </div>
           <div className="right-header">
-              <CurrencyDropdownComponent
-                getSelectedCurrency={this.props.getSelectedCurrency}
-                setSelectedCurrency={this.props.setSelectedCurrency}
-              />
+             <CurrencyDropdownComponent
+                  currencies={this.state['currencies']}
+                  getSelectedCurrency={this.props.getSelectedCurrency}
+                  setSelectedCurrency={this.props.setSelectedCurrency}
+                  selectedCurrency={this.state.selectedCurrency}
+             />
               <CartModalComponent
                   getSelectedCurrency={this.props.getSelectedCurrency}
                   getCart={this.props.getCart}
@@ -68,4 +75,4 @@ class HeaderComponent extends PureComponent {
   }
 }
 
-export default HeaderComponent;
+export default withRouter(HeaderComponent);

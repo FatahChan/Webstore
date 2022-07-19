@@ -32,14 +32,12 @@ class ProductListingPageComponent extends PureComponent {
   render() {
     if (this.state.redirect) {return <Redirect to={`/${this.state.category}`}/>}
     if (this.state['isLoading']) { return <div>Loading...</div> }
+    console.log(this.state['products'])
     const ProductCards = this.state['products'].map((product) => (
         <ProductCardComponent
             key={JSON.stringify(product)}
-            id={product.id}
-            name={product.name}
-            brand={product.brand}
-            prices={product.prices}
-            gallery={product.gallery}
+            product={product.product}
+            defaultAttributes={product.attributes}
             getCart={this.props.getCart}
             setCart={this.props.setCart}
             getSelectedCurrency={this.props.getSelectedCurrency}

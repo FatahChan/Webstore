@@ -4,8 +4,8 @@ import  "./Cart.css"
 class CartComponent extends Component {
   round(value) {
     return Math.round(value * 100) / 100
-
   }
+
   render() {
     let cartCount = 0;
     let total = 0
@@ -15,11 +15,13 @@ class CartComponent extends Component {
     })
     total= this.round(total)
     return (
+
         <div className="cart-page">
           <div className="cart-page-label">CART</div>
           <div className="cart-items">
               {this.props.getCart().map((cartItem) => (
               <CartItemComponent
+
                   key={JSON.stringify({product: cartItem.product, attributes: cartItem.attributes})}
                   getSelectedCurrency={this.props.getSelectedCurrency}
                   product={cartItem.product}

@@ -4,29 +4,18 @@ import CartItemCounterComponent from "./CartItemCounter/CartItemCounter.Componen
 import CartItemCarouselComponent from "./CartItemCarousel/CartItemCarousel.Component";
 import "./CartItem.css"
 class CartItemComponent extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true,
-    }
-  }
-  componentDidMount() {
-    this.setState({
-      isLoading: false,
-    })
-  }
   updateAttributes(attribute, value) {
     let cart = this.props.getCart();
-    const product = JSON.stringify(this.props.product);
+    const product = this.props.product;
     const attributes = JSON.stringify(this.props.attributes);
     for (let i = 0; i < cart.length; i++) {
-      if(JSON.stringify(cart[i]['product']) === product && JSON.stringify(cart[i]['attributes']) === attributes){
+      if(cart[i]['product'].id === product.id && JSON.stringify(cart[i]['attributes']) === attributes){
         console.log(cart[i]['attributes']);
         cart[i]['attributes'][attribute]=value;
         let j;
         for (j = 0; j < cart.length; j++) {
           if(j===i)continue;
-          if(JSON.stringify(cart[j]['product']) === JSON.stringify(cart[i]['product']) && JSON.stringify(cart[j]['attributes']) === JSON.stringify(cart[i]['attributes'])){
+          if(cart[j]['product'].id ===  cart[i]['product'].id && JSON.stringify(cart[j]['attributes']) === JSON.stringify(cart[i]['attributes'])){
             cart[i]['quantity'] += cart[j]['quantity']
             cart.splice(j, 1);
           }
@@ -38,10 +27,10 @@ class CartItemComponent extends PureComponent {
   }
   updateQuantity(quantity) {
     let cart = this.props.getCart();
-    const product = JSON.stringify(this.props.product);
+    const product = this.props.product;
     const attributes = JSON.stringify(this.props.attributes);
     for (let i = 0; i < cart.length; i++) {
-      if(JSON.stringify(cart[i]['product']) === product && JSON.stringify(cart[i]['attributes']) === attributes){
+      if(cart[i]['product'].id === product.id && JSON.stringify(cart[i]['attributes']) === attributes){
         if(quantity === 0){
           cart.splice(i, 1);
           this.props.setCart(cart);
@@ -54,7 +43,6 @@ class CartItemComponent extends PureComponent {
     }
   }
   render() {
-    if(this.state.isLoading) { return <div>load</div>; }
     return (
         <div className="cart-item">
           <CartItemInfoComponent

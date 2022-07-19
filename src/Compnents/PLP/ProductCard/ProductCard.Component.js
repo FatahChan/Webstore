@@ -1,70 +1,43 @@
 import React, {PureComponent} from 'react';
 import {Link} from "react-router-dom";
 import {addToCart} from "../../../Assets/addToCart";
-import {getProduct} from "../../../BackendCalls/getProduct";
 import "./ProductCard.css"
 class ProductCardComponent extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true,
-      product: {},
-      attributes: {},
-      price: "USD"
-    }
-  }
-  componentDidMount() {
-    getProduct(this.props.id).then((res) => {
-      let prices = res['product'].prices.slice()
-      prices = prices.filter((price)=> {
-        return price.currency.label === this.props.getSelectedCurrency().label
-      })
-      const price = prices[0];
-      this.setState({
-        product: res['product'],
-        attributes: res['attributes'],
-        price: price,
-        isLoading: false
-      })
-    })
-  }
+
   _addToCart(){
     let cart = this.props.getCart();
-    const product = JSON.stringify(this.state['product']);
-    const attributes = JSON.stringify(this.state['attributes']);
+    const product = this.props['product'];
+    const attributes = JSON.stringify(this.props['defaultAttributes']);
     for (let i = 0; i < cart.length; i++) {
-      if(JSON.stringify(cart[i]['product']) === product && JSON.stringify(cart[i]['attributes']) === attributes){
+      if(cart[i]['product'].id === product.id && JSON.stringify(cart[i]['attributes']) === attributes){
         cart[i]['quantity'] += 1;
         this.props.setCart(cart);
         return;
       }
     }
-    cart.push({ product: this.state['product'], attributes: this.state['attributes'], quantity: 1 });
+    cart.push({ product: this.props['product'], attributes: this.props['defaultAttributes'], quantity: 1 });
+    console.log('at add cart',cart);
     this.props.setCart(cart);
   }
   render(){
-    if (this.state['isLoading']) { return <div></div> }
-    if(this.state['product']['inStock'] === false){
-      console.log("out of stock", this.state['product']['name'])
-    }
+    const price = this.props['product']['prices'].find((price)=> { return price.currency.label === this.props.getSelectedCurrency().label; });
     return (
-        <div className="product-card" key={this.props.id}>
-          <Link style={{textDecoration: 'none', "color": "black"}} to={`/product/${this.props.id}`}>
+        <div className="product-card" key={this.props.product.id}>
+          <Link to={`/product/${this.props.product.id}`}>
             <div className="card">
-              <img className={this.state['product']['inStock']? '':'out-of-stock'} alt={this.state['product'].name} src={this.state['product'].gallery[0]}/>
-              <div className={`out-of-stock-label ${this.state['product']['inStock']? '':'show-out-of-stock'}`}>OUT OF STOCK</div>
-              <></>
+              <img className={this.props['product']['inStock']? '':'out-of-stock'} alt={this.props['product'].name} src={this.props['product'].gallery[0]}/>
+              <div className={`out-of-stock-label ${this.props['product']['inStock']? '':'show-out-of-stock'}`}>OUT OF STOCK</div>
               <div className="card-text">
-                <div className="brand-name-card">{this.state['product'].brand} {this.state['product'].name}</div>
+                <div className="brand-name-card">{this.props['product'].brand} {this.props['product'].name}</div>
                 <div className="price-card">
-                  {this.state['price'].currency.symbol}{this.state['price'].amount}
+                  {price.currency.symbol}{price.amount}
                 </div>
               </div>
             </div>
           </Link>
-          <div onClick={this._addToCart.bind(this)} className={`card-add-button ${this.state['product']['inStock']? '': 'out-of-stock-button'}`}>
+          {this.props.product.inStock && <div onClick={this._addToCart.bind(this)} className={`card-add-button ${this.props['product']['inStock']? '': 'out-of-stock-button'}`}>
             <div className="cart-icon">{addToCart}</div>
-          </div>
+          </div>}
         </div>
     );
   }

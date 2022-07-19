@@ -37,20 +37,20 @@ class App extends Component {
   getSelectedCurrency() {
     return this.state.selectedCurrency;
   }
-  setSelectedCurrency(currencyLabel){
-    this.setState({selectedCurrency: currencyLabel})
+  setSelectedCurrency(currency){
+    this.setState({selectedCurrency: currency})
   }
   render() {
+    console.log(window.location.pathname)
     return (
         <div>
           <BrowserRouter>
-            <HeaderComponent
-                key={JSON.stringify({ selectedCurrency: this.state.selectedCurrency})}
-                setSelectedCurrency={this.setSelectedCurrency.bind(this)}
-                getSelectedCurrency={this.getSelectedCurrency.bind(this)}
-                setCart={this.setCart.bind(this)}
-                getCart={this.getCart.bind(this)}
-            />
+                <HeaderComponent
+                    setSelectedCurrency={this.setSelectedCurrency.bind(this)}
+                    getSelectedCurrency={this.getSelectedCurrency.bind(this)}
+                    setCart={this.setCart.bind(this)}
+                    getCart={this.getCart.bind(this)}
+                />
             <Switch>
               <Route exact path="/" >
                 <Redirect to={`/default`}/>

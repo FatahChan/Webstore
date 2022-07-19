@@ -39,9 +39,9 @@ export async function getProduct(id) {
   for (const attribute of attributes) {
     attributesDefault[attribute.name] = attribute.items[0].value
   }
-  res = {
+  return {
     "product": res.data.product,
     "attributes": attributesDefault
   }
-  return res;
+
 }

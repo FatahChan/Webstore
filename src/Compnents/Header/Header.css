@@ -43,11 +43,14 @@
 }
 
 .category-selector-header:hover{
+    color: #5ECE7B;
+
+}
+
+.category-selected{
     border-bottom: 2px solid #5ECE7B;
     color: #5ECE7B;
 }
-
-
 
 #currency-dropdown-button{
     background-color: white;

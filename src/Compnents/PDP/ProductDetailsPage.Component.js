@@ -31,10 +31,10 @@ class ProductDetailsPageComponent extends Component {
   }
   _addToCart(){
     let cart = this.props.getCart();
-    const product = JSON.stringify(this.state['product']);
+    const product = this.state['product'];
     const attributes = JSON.stringify(this.state['attributes']);
     for (let i = 0; i < cart.length; i++) {
-      if(JSON.stringify(cart[i]['product']) === product && JSON.stringify(cart[i]['attributes']) === attributes){
+      if(cart[i]['product'].id === product.id && JSON.stringify(cart[i]['attributes']) === attributes){
         cart[i]['quantity'] += 1;
         this.props.setCart(cart);
         return;

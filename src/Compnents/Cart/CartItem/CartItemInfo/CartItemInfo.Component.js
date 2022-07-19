@@ -5,6 +5,7 @@ class CartItemInfoComponent extends PureComponent {
 
 
   render() {
+    console.log(this.props.attributes)
     const price = this.props.product.prices.find((price) => price.currency.label === this.props.getSelectedCurrency().label);
     return (
         <div className="cart-item-info">
