@@ -43,6 +43,7 @@ class HeaderComponent extends PureComponent {
 
   render() {
     if(this.state['isLoading']) { return <div>Loading...</div> }
+    console.log(this.state['categories'])
     return (
         <div className="header">
           <div className="left-header">

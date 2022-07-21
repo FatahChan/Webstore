@@ -57,9 +57,6 @@
     display: none;
 }
 
-.show-modal {display: block !important}
-
-
 .cart-modal-total{
     display: flex;
     flex-direction: row;

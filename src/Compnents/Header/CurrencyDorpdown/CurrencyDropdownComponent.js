@@ -12,10 +12,19 @@ class CurrencyDropdownComponent extends Component {
       selectedCurrencySymbol: ''
     }
   }
-
+  handleClickOutside(e) {
+    console.log(e.target)
+    if (!e.target.matches('.currencies-drop-down, .currencies-drop-down *')) {
+      this.setState({isListOpen: false})
+    }
+  }
   componentDidMount() {
-    const selectedCurrencySymbol= this.props.selectedCurrency.symbol;
+    const selectedCurrencySymbol = this.props.selectedCurrency.symbol;
     this.setState({selectedCurrencySymbol: selectedCurrencySymbol, isLoading: false})
+    window.addEventListener('click', this.handleClickOutside.bind(this));
+  }
+  componentWillUnmount() {
+    window.removeEventListener('click', this.handleClickOutside.bind(this));
   }
 
   toggleList() {
@@ -41,7 +50,8 @@ class CurrencyDropdownComponent extends Component {
             {this.state.isListOpen && (
                 <div className="currencies-list">
                   {this.props.currencies.map((currency) => (
-                    <div className='currency-option' key={currency.symbol} onClick={() => this.selectCurrency(currency)}>
+                    <div className='currency-option' key={currency.symbol}
+                         onClick={() => this.selectCurrency(currency)}>
                       {currency.symbol} {currency.label}
                     </div>
                   ))}
