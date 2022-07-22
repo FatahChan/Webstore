@@ -43,10 +43,10 @@ class CartModalComponent extends Component {
     })
     total= this.round(total)
     return (
-        <div className='cart-header'>
+        <div className={`cart-header ${cartCount > 0 ? "add-pointer" : ""}`}>
           <div
               className="cart-icon"
-              onClick={() => {this.props.getCart().length > 0 && this.setState({showModal: 'show'})}}
+              onClick={() => {cartCount > 0 && this.setState({showModal: 'show'})}}
           >{cart} {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}</div>
           <div id="cart-modal" className={`modal-cart ${this.state.showModal}`}>
             <div className="dark-background"/>

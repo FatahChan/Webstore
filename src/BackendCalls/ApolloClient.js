@@ -5,7 +5,7 @@ const cache = new InMemoryCache({
     AttributeSet: {
       // Singleton types that have no identifying field can use an empty
       // array for their keyFields.
-      keyFields: [],
+      keyFields: ["id", "items"],
     },
   },
 });
