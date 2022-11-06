@@ -1,17 +1,10 @@
-# This project is a submission for Junior/Inter Developer position in Scandiweb.
-YARN VERSION
-
-Applicant name: Ahmad Fathallah
-
-
 # Getting started
 
-clone backend from [here](https://github.com/scandiweb/junior-react-endpoint)
-
-1 - yarn install
-
-2- yarn start
-
+1. Clone the repository
+2. Run `yarn install` to install dependencies in both backend and frontend directories
+3. Run `yarn build` to install dependencies in both backend and frontend directories
+4. Run `yarn start` to install dependencies in both backend and frontend directories
+5. Open `http://localhost:3000` in your browser
 
 # Gallerry
 
