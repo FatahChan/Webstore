@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4452f2b-0e91-4e8e-bc51-d631fa648395" name="Changes" comment="Updated README.md">
-      <change afterPath="$PROJECT_DIR$/Frontend/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/BackendCalls/ApolloClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/BackendCalls/ApolloClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/yarn.lock" afterDir="false" />
+    <list default="true" id="d4452f2b-0e91-4e8e-bc51-d631fa648395" name="Changes" comment="added .env config">
+      <change afterPath="$PROJECT_DIR$/Backend/vercel.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/BackendCalls/getCategories.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/BackendCalls/getCategories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/BackendCalls/getCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/BackendCalls/getCategory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/BackendCalls/getCurrencies.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/BackendCalls/getCurrencies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/BackendCalls/getProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/BackendCalls/getProduct.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +32,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/Dev/Web_Dev/Webstore&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/Dev/Web_Dev/Kustomer_Tree_Input_Component&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
     &quot;ts.external.directory.path&quot;: &quot;G:\\Dev\\Web_Dev\\Webstore\\Backend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -45,7 +47,9 @@
       <option name="presentableId" value="Default" />
       <updated>1667763096065</updated>
       <workItem from="1667763097329" duration="1439000" />
-      <workItem from="1668648849493" duration="3230000" />
+      <workItem from="1668648849493" duration="4521000" />
+      <workItem from="1668815234406" duration="219000" />
+      <workItem from="1669416147223" duration="2390000" />
     </task>
     <task id="LOCAL-00001" summary="All">
       <created>1667763435891</created>
@@ -61,7 +65,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667763930320</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added .env config">
+      <created>1668652161106</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668652161106</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,6 +92,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="All" />
     <MESSAGE value="Updated README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated README.md" />
+    <MESSAGE value="added .env config" />
+    <option name="LAST_COMMIT_MESSAGE" value="added .env config" />
   </component>
 </project>
